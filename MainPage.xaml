@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculadoraApp.MainPage"
+             BackgroundColor="#121212">
+
+    <Grid RowDefinitions="Auto,*"
+          Padding="20,10">
+
+        <!-- Pantalla de la calculadora -->
+        <StackLayout Grid.Row="0">
+            <Label x:Name="HistoryLabel"
+                   Text=""
+                   FontSize="16"
+                   TextColor="LightGray"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Margin="0,10,0,0"/>
+
+            <Label x:Name="ResultLabel"
+                   Text="0"
+                   FontSize="80"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Margin="0,0,0,20"/>
+        </StackLayout>
+
+        <!-- Teclado de la calculadora -->
+        <Grid Grid.Row="1"
+              RowDefinitions="*,*,*,*,*,*"
+              ColumnDefinitions="*,*,*,*"
+              RowSpacing="10"
+              ColumnSpacing="10">
+            
+            <!-- Fila 1 - Operaciones adicionales -->
+            <Button Text="x^y"
+                    Grid.Row="0"
+                    Grid.Column="0" 
+                    FontSize="40"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="#FF9500"
+                    Clicked="OnPowerButtonClicked"/>
+
+            <Button Text="1/x"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="40"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="#FF9500"
+                    Clicked="OnInverseButtonClicked"/>
+
+            <Button Text="√"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontSize="40"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="#FF9500"
+                    Clicked="OnSquareRootButtonClicked"/>
+
+            <Button Text="±"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    FontSize="40"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="#FF9500"
+                    Clicked="OnSignChangeButtonClicked"/>
+
+            <!-- Fila 2 -->
+            <Button Text="M"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="40"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    Clicked="OnMemoryButtonClicked"/>
+
+            <Button Text="AC"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    FontSize="40"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    Clicked="OnClearButtonClicked"/>
+
+            <Button Text="%"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="40"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="#FF9500"
+                    Clicked="OnPercentButtonClicked"/>
+
+            <Button Text="÷"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    FontSize="50"
+                    BackgroundColor="#FF9500"
+                    TextColor="White"
+                    Clicked="OnOperatorButtonClicked"/>
+
+            <!-- Fila 3 -->
+            <Button Text="7"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="8"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="9"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="×"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    FontSize="50"
+                    BackgroundColor="#FF9500"
+                    TextColor="White"
+                    Clicked="OnOperatorButtonClicked"/>
+
+            <!-- Fila 4 -->
+            <Button Text="4"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="5"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="6"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="-"
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    FontSize="50"
+                    BackgroundColor="#FF9500"
+                    TextColor="White"
+                    Clicked="OnOperatorButtonClicked"/>
+
+            <!-- Fila 5 -->
+            <Button Text="1"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="2"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="3"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="+"
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    FontSize="50"
+                    BackgroundColor="#FF9500"
+                    TextColor="White"
+                    Clicked="OnOperatorButtonClicked"/>
+
+            <!-- Fila 6 -->
+            <Button Text="0"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnNumberButtonClicked"/>
+
+            <Button Text="."
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    FontAttributes="Bold"
+                    FontSize="40"
+                    BackgroundColor="#2C2C2C"
+                    TextColor="White"
+                    Clicked="OnDecimalPointButtonClicked"/>
+
+            <Button Text="="
+                    Grid.Row="4"
+                    Grid.Column="3"
+                    Grid.RowSpan="2"
+                    FontSize="50"
+                    BackgroundColor="green"
+                    TextColor="White"
+                    Clicked="OnEqualsButtonClicked"/>
+
+
+        </Grid>
+    </Grid>
+</ContentPage>
